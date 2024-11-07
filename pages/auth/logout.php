@@ -4,5 +4,5 @@
  //hapus session
  session_destroy();
 
- header("Location: nav.php");
+ header("Location: ../index.php");
 ?>
