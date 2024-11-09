@@ -80,7 +80,7 @@ $query = mysqli_query($koneksi, "select * from produk");
 
                 <div class="title my-5 d-flex justify-content-center flex-column align-items-center">
                     <h1 class="fs-2 text-secondary">MENU</h1>
-                    <p class="">Lor ipsum doloramet consectetur.</p>
+                    <p class="">Lor ipsum domet consectetur.</p>
                 </div>
 
                 <div class="container mt-4 d-flex gap-5"></div>
