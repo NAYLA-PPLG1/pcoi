@@ -54,10 +54,9 @@ $query = mysqli_query($koneksi, "select * from produk");
         <div class="container d-flex font-bold text-light align-items-center">
             <span class="navbar-brand mb-0 h1 font-bold text-dark">PCOI NAY</span>
             <ul class="list-style-non d-flex flex-row gap-5 mb-0 text-dark align-items-center">
-          
                 <li><a href=""></a></li>
-                <li>HOME</li>
-                <li>PRODUK</li>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#product">PRODUK</a></li>
                 <?php if (isset($_SESSION['role'])) { ?>
                     <?php echo $_SESSION['username'] ?>
                     <a class="btn btn-danger" href="./auth/logout.php">Logout</a>
@@ -68,11 +67,13 @@ $query = mysqli_query($koneksi, "select * from produk");
             </ul>
         </div>
     </nav>
-    <div class="container p-5 d-flex justify-content-center mt-3">
-        <div class="child-image-content">
-            <img src="../images/pangsit chili oil.png" alt="">
+    <section id="home">
+        <div class="container p-5 d-flex justify-content-center mt-3">
+            <div class="child-image-content">
+                <img src="../images/pangsit chili oil.png" alt="">
+            </div>
         </div>
-    </div>
+    </section>
 
     <section id="product">
         <div class="container">
@@ -94,8 +95,7 @@ $query = mysqli_query($koneksi, "select * from produk");
                         <div class="card-body">
                             <h5 class="card-title"><?= $data['nama'] ?></h5>
                             <h5 class="card-tittle"><?= $data['harga'] ?></h5>
-                            <p class="card-title"><?= $data['deksripsi'] ?></p>
-                            <a href="#" class="btn btn-primary">Beli</a>
+                            <a href="detail.php?id=<?= $data['id']?>" class="btn btn-primary">Detail</a>
                         </div>
                     </div>
                 <?php endwhile ?>
