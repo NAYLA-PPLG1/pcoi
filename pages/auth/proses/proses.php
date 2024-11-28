@@ -12,7 +12,7 @@
     if($jumlah_data > 0){
         $data = mysqli_fetch_array($query);
         $_SESSION['id'] = $data['id'];
-        $_SESSION['username'] = $data['username'];
+        $_SESSION['username'] = $data['nama'];
         $_SESSION['role'] = $data['role'];
 
         if($_SESSION['role'] === "admin"){

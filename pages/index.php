@@ -3,6 +3,7 @@ session_start();
 include("./koneksi/koneksi.php");
 
 $query = mysqli_query($koneksi, "select * from produk");
+// $queryUser = mysqli_query($koneksi, "select * from users");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,6 +37,7 @@ $query = mysqli_query($koneksi, "select * from produk");
 
     .list-style-non {
         list-style: none;
+
     }
 
     .image {
@@ -53,12 +55,19 @@ $query = mysqli_query($koneksi, "select * from produk");
     <nav class="fixed-top navbar d-flex flex-row">
         <div class="container d-flex font-bold text-light align-items-center">
             <span class="navbar-brand mb-0 h1 font-bold text-dark">PCOI NAY</span>
-            <ul class="list-style-non d-flex flex-row gap-5 mb-0 text-dark align-items-center">
+            <ul class="list-style-non d-flex flex-row gap-4 mb-0 text-dark align-items-center list-style-non">
                 <li><a href=""></a></li>
-                <li><a href="#home">HOME</a></li>
+                <li><a href="#home" >HOME</a></li>
                 <li><a href="#product">PRODUK</a></li>
-                <?php if (isset($_SESSION['role'])) { ?>
-                    <?php echo $_SESSION['username'] ?>
+                <li><a href="halamanAdmin.php">DASHBOARD</a></li>
+                <?php
+                // while ($data = mysqli_fetch_array($queryUser)):
+                if (isset($_SESSION['role'])) {
+                    ?>
+                    <div class="fs-5">
+                        <?php echo $_SESSION['username'] ?>
+
+                    </div/>
                     <a class="btn btn-danger" href="./auth/logout.php">Logout</a>
 
                 <?php } else { ?>
@@ -84,7 +93,8 @@ $query = mysqli_query($koneksi, "select * from produk");
                     <p class="">Lor ipsum domet consectetur.</p>
                 </div>
 
-                <div class="container mt-4 d-flex gap-5"></div>
+                <div class="container mt-4 d-flex gap-5 row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                </div>
                 <?php
                 while ($data = mysqli_fetch_array($query)):
                     ?>
@@ -95,7 +105,7 @@ $query = mysqli_query($koneksi, "select * from produk");
                         <div class="card-body">
                             <h5 class="card-title"><?= $data['nama'] ?></h5>
                             <h5 class="card-tittle"><?= $data['harga'] ?></h5>
-                            <a href="detail.php?id=<?= $data['id']?>" class="btn btn-primary">Detail</a>
+                            <a href="detail.php?id=<?= $data['id'] ?>" class="btn btn-primary">Detail</a>
                         </div>
                     </div>
                 <?php endwhile ?>

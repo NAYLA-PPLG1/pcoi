@@ -28,6 +28,11 @@
         background-color: transparent;
         backdrop-filter: blur(4px);
     }
+    footer {
+        width: 100%;
+        height: 500px;
+        padding: 30px 0px;
+    }
 </style>
 <body>
 <nav class="fixed-top navbar d-flex flex-row">
@@ -47,6 +52,16 @@
                 <?php } ?>
             </ul>
         </div>
-    </nav>
+
+    <footer>
+    <div>
+        <div class="text-bg-secondary p-3 text-center">Berhasil mendapatkan gratis ongkir</div>
+        <div class="pt-3 ">
+            <label for="alamat" class="text-centero">Alamat</label>
+            <textarea type="text" name="alamat" id="alamat"></textarea>
+        </div>
+    </div>
+    </footer>
 </body>
 </html>
+<label for=></label>    
