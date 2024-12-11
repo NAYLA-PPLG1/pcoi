@@ -1,10 +1,16 @@
 <?php
     session_start();
-    if( $_SESSION['role'] !== "admin")
+
+    if (!isset($_SESSION['role'])) {
+        header("Location: ./auth/login.php");
+        exit();
+    };
+    
+    if($_SESSION['role'] !== "admin")
     {
-        echo "405 Anda tidak berhak untuk masuk ke halaman ini";
+        include './ErrorPg.php';
         die();
-    }
+    } 
 ?>
 <!DOCTYPE html>
 <html lang="en">

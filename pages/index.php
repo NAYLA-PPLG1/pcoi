@@ -32,6 +32,15 @@ $query = mysqli_query($koneksi, "select * from produk");
         padding: 0;
     }
 
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: lightslategray;
+    }
+
     nav {
         background-color: transparent;
         backdrop-filter: blur(4px);
@@ -50,6 +59,7 @@ $query = mysqli_query($koneksi, "select * from produk");
 
     }
 
+
     .image {
         width: 100%;
         height: 100%;
@@ -59,6 +69,10 @@ $query = mysqli_query($koneksi, "select * from produk");
     }
 
     #home {
+        width: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url('../images/pcoil.png');
+        background-size: cover;
+        background-repeat: no-repeat;
         height: 100vh;
     }
 
@@ -70,13 +84,24 @@ $query = mysqli_query($koneksi, "select * from produk");
 
     .contact__container {
         width: 100%;
+        height: 100%;
         display: flex;
         justify-content: center;
+        align-items: center;
+    }
+
+    .child-image-content {
+        height: 50%;
     }
 
     .contact__inside {
         padding: 12px 32px;
         border-radius: 30px;
+    }
+
+    #home>.img__container {
+        width: 100%;
+        height: 100vh;
     }
 
     #contact i {
@@ -118,8 +143,13 @@ $query = mysqli_query($koneksi, "select * from produk");
 
 <body>
     <header class="d-inline top-0">
-        <section id="home">
-            <div class="container p-5 d-flex justify-content-center mt-3">
+        <section id="home" class="h-100 ">
+            <div class="img__container d-flex justify-content-center align-items-center">
+
+                <div class="d-flex flex-column text-light">
+                <h1>PCOI NAY</h1>
+                <p>Enaknya di setiap level</p>
+                </div>
                 <div class="child-image-content">
                     <img src="../images/pcoil.png" alt="">
                 </div>
@@ -133,14 +163,17 @@ $query = mysqli_query($koneksi, "select * from produk");
                     <li><a href=""></a></li>
                     <li><a href="#home">HOME</a></li>
                     <li><a href="#product">PRODUK</a></li>
-                    <li><a href="halamanAdmin.php">DASHBOARD</a></li>
-                    <?php
+                    <li><a href="./halamanAdmin.php">DASHBOARD</a></li>
+                    
+                   
+                        <?php
                     // while ($data = mysqli_fetch_array($queryUser)):
                     if (isset($_SESSION['role'])) {
                         ?>
                         <div class="fs-5">
-                            <?php echo $_SESSION['username'] ?>
-
+                            <li>
+                                <?php echo $_SESSION['username'] ?>
+                            </li>
                         </div />
                         <a class="btn btn-danger" href="./auth/logout.php">Logout</a>
 
@@ -158,7 +191,7 @@ $query = mysqli_query($koneksi, "select * from produk");
 
                     <div class="title my-5 d-flex justify-content-center flex-column align-items-center">
                         <h1 class="fs-2 text-secondary">MENU</h1>
-                        <p class="">Lor ipsum domet consectetur.</p>
+                        <p class="">let's look at our menu</p>
                     </div>
 
                     <div
@@ -183,11 +216,10 @@ $query = mysqli_query($koneksi, "select * from produk");
         </section>
 
         <section id="informasi">
-            <div class="info__container">
+            <div class="info__container m-5">
                 <div class="info__title">
                     <h1>PANGSIT CHILI OIL NAYLA</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo dolor minus, odit
-                        necessitatibus quod possimus sequi illo quisquam odio quasi!</p>
+                    <p>NIKMATI DI SETIAP LEVEL !!</p>
                 </div>
                 <div class="container__value">
                     <div class="info__value">
@@ -231,9 +263,9 @@ $query = mysqli_query($koneksi, "select * from produk");
 
     </main>
     <footer class="bg-primer-subtle">
-                        <div>
-                            INI FOOTER BLOg
-                        </div>
+        <div>
+            INI FOOTER BLOg
+        </div>
     </footer>
 
 </body>
