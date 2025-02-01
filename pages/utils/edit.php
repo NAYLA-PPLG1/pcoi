@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <from action="prosesEdit" method="post">
+    <from action="prosesEdit.php" method="post">
         <input type="hidden" name="nama" value="<?= $produk['nama'] ?>">
         <div class="edit">
             <p>Nama</p>
@@ -25,10 +25,6 @@
         <div class="edit">                                                  
             <p>File</p>
             <input type="file" name="foto" />
-        </div>
-        <div class="edit">
-            <p>Lokasi</p>
-            <input type="lokasi" name="lokasi_file" />
         </div>
         <button type="submit">Edit</button>
 

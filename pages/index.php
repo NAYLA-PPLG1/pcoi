@@ -19,12 +19,6 @@ $query = mysqli_query($koneksi, "select * from produk");
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <style>
-    .lexend-<uniquifier> {
-        font-family: "Lexend", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: <weight>;
-        font-style: normal;
-    }
 
     body {
         font-family: "Lexend", serif;
@@ -144,7 +138,7 @@ $query = mysqli_query($koneksi, "select * from produk");
 <body>
     <header class="d-inline top-0">
         <section id="home" class="h-100 ">
-            <div class="img__container d-flex justify-content-center align-items-center">
+            <div class="img__container d-flex justify-content-centeR">
 
                 <div class="d-flex flex-column text-light">
                 <h1>PCOI NAY</h1>
@@ -222,40 +216,41 @@ $query = mysqli_query($koneksi, "select * from produk");
                     <p>NIKMATI DI SETIAP LEVEL !!</p>
                 </div>
                 <div class="container__value">
-                    <div class="info__value">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores odit repellendus quasi
-                            modi rerum quidem veniam, quia quae cumque libero dolor quisquam. Tempore, sit. Tempora
-                            accusantium quae assumenda molestiae autem, voluptatem temporibus ipsam neque vitae enim
-                            corrupti necessitatibus reprehenderit quas sint asperiores corporis suscipit nihil iure
-                            mollitia officiis repudiandae omnis ducimus cum! Accusamus ipsa consectetur natus illo
-                            ratione animi iste atque, omnis aperiam rem rerum vero fugit esse facilis voluptate
-                            reprehenderit molestias, accusantium doloribus corrupti unde quos. Nam excepturi veniam est
-                            fugiat repellat blanditiis officia reprehenderit, nemo, suscipit repudiandae quaerat
-                            consectetur tempore accusantium natus, minima similique sequi libero! Blanditiis, eligendi.
-                        </p>
-                    </div>
-                    <div class="info__value">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores odit repellendus quasi
-                            modi rerum quidem veniam, quia quae cumque libero dolor quisquam. Tempore, sit. Tempora
-                            accusantium quae assumenda molestiae autem, voluptatem temporibus ipsam neque vitae enim
-                            corrupti necessitatibus reprehenderit quas sint asperiores corporis suscipit nihil iure
-                            mollitia officiis repudiandae omnis ducimus cum! Accusamus ipsa consectetur natus illo
-                            ratione animi iste atque, omnis aperiam rem rerum vero fugit esse facilis voluptate
-                            reprehenderit molestias, accusantium doloribus corrupti unde quos. Nam excepturi veniam est
-                            fugiat repellat blanditiis officia reprehenderit, nemo, suscipit repudiandae quaerat
-                            consectetur tempore accusantium natus, minima similique sequi libero! Blanditiis, eligendi.
-                        </p>
-                    </div>
-                </div>
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="../assets/foto_produk/pangsit chili oil.png" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="../assets/foto_produk/pangsit-kuah.jpeg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src=".../800x400?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
             </div>
         </section>
 
         <section id="contact">
             <div class="contact__container">
                 <div class="contact__inside bg-secondary-subtle">
-                    <i class="bi bi-instagram"></i>
-                    <i class="bi bi-tiktok"></i>
-                    <i class="bi bi-whatsapp"></i>
+                    <a href="https://www.instagram.com/fanylaai/"><i class="bi bi-instagram"></i></a>
+                    <a href="https://wa.me/089686024135"> <i class="bi bi-whatsapp"></i></a>
+                    <a href="https://myaccount.google.com/?hl=in&utm_source=OGB&utm_medium=act&gar=WzI4MV0"><i class="bi bi-envelope"></i></a>
                 </div>
             </div>
         </section>

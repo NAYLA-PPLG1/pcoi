@@ -7,7 +7,7 @@
     $namafoto = $_FILES["foto"]["name"];
     $lokasifoto = $_FILES["foto"]["tmp_name"];
 
-    $query = mysqli_query($koneksi, "insert into produk values( null, '$nama', '$harga', '$namafoto', '$deksripsi', 2)");
+    $query = mysqli_query($koneksi, "INSERT INTO produk (nama, harga, foto, deksripsi) values( '$nama', '$harga', '$namafoto', '$deksripsi')");
 
     if($query){
         move_uploaded_file($lokasifoto, to: "../assets/foto_produk/$namafoto");

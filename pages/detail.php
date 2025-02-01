@@ -8,7 +8,7 @@ if (!isset($_GET['id'])) {
 }
 $id = $_GET["id"];
 
-$query = mysqli_query($koneksi, "SELECT produk.id, produk.nama, produk.harga, produk.foto, produk.deksripsi, kategori.id AS id_kategori, kategori AS nama_kategori FROM produk INNER JOIN kategori ON produk.id_kategori = kategori.id
+$query = mysqli_query($koneksi, "SELECT produk.id, produk.nama, produk.harga, produk.foto, produk.deksripsi, kategori.id AS id_kategori, kategori AS nama_kategori FROM produk INNER JOIN kategori ON produk.id = kategori.id
 where produk.id='$id'");
 
 if (mysqli_num_rows($query) == 0) {
@@ -44,7 +44,7 @@ $data = mysqli_fetch_array($query);
                 <h5 class="card-tittle"><?= $data['harga'] ?></h5>
                 <h5 class="card-title">Kategori : <?= $data['nama_kategori']?></h5>
                 <p class="card-tittle"><?= $data['deksripsi'] ?></p>
-                <a href="detail.php?id=<?= $data['id'] ?>" class="btn btn-primary">Checkout</a>
+                <a href="./proses-keranjang/proses_keranjang.php?id=<?= $data['id'] ?>" class="btn btn-primary">Checkout</a>
             </div>
         </div>
     </div>
